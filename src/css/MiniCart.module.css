@@ -265,3 +265,26 @@
        transform: translateY(0);
     }
   }
+
+
+@media only screen and (max-width: 420px) {
+    .miniCart{
+        width: 300px;
+        right: -15px;
+    }
+}
+@media only screen and (max-width: 365px) {
+    .miniCart{
+        width: 275px;
+    }
+}
+@media only screen and (max-width: 330px) {
+    .miniCart{
+        width: 250px;
+    }
+}
+@media only screen and (max-width: 305px) {
+    .miniCart{
+        width: 225px;
+    }
+}
