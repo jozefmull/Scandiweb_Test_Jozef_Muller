@@ -1,0 +1,267 @@
+
+.cartIconHeader{
+    position: relative;
+}
+.cartIconHeader img{
+    cursor: pointer;
+    user-select: none;
+}
+.cartIconHeader .cartBadge{
+    font-family: 'Roboto' !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    background-color: #000;
+    border-radius: 50%;
+    color: #fff;
+    padding: 3px 6px 3px 6px;
+    font-weight: 700;
+    font-size: 0.875rem;
+    line-height: 1;
+    top: -12px;
+    right: -15px;
+    user-select: none;
+    pointer-events: none;
+    -webkit-animation-duration: var(--anim-duration);
+    animation-duration: var(--anim-duration);
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-name: fadeInDown;
+    animation-name: fadeInDown;
+}
+.miniCart{
+    width: 325px;
+    min-height: 100%;
+    height: fit-content;
+    position: absolute;
+    right: 0px;
+    top: 32px;
+    margin: 20px 0px;
+    z-index: 45;
+    box-shadow: 0px 4px 35px rgba(168, 172, 176, 0.19);
+    display: flex;
+    flex-direction: column;
+    padding: 32px 16px;
+    background-color: #fff;
+    -webkit-animation-duration: var(--anim-duration);
+    animation-duration: var(--anim-duration);
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-name: fadeInDown;
+    animation-name: fadeInDown;
+}
+.miniCart h3{
+    font-weight: 700;
+    font-size: 1rem;
+    margin-top: 0px;
+    margin-bottom: 20px;
+}
+.miniCart span{
+    font-weight: 500;
+}
+.miniCart .total{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+.miniCart .total h3{
+    margin: 0;
+}
+.miniCart .buttons{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.miniCart .buttons a{
+    border-radius: 0px;
+    outline: none;
+    border: none;
+    margin-bottom: 0px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.875rem;
+    transition: var(--transition);
+    padding: 0;
+    text-decoration: none;
+    color: inherit;
+    padding: 15px 10px;
+    position: relative;
+    width: 40%;
+    text-align: center;
+}
+
+.miniCart .buttons a.bag{
+    outline: 1px solid #000;
+    background-color: #fff;
+}
+.miniCart .buttons a.checkout{
+    outline: 1px solid var(--primary-btn-bg);
+    background-color: var(--primary-btn-bg);
+    color: #fff;
+}
+.miniCart .buttons a.bag:hover{
+    background-color: #000;
+    color: #fff;
+}
+.miniCart .buttons a.checkout:hover{
+    background-color: var(--primary-btn-hover-bg);
+    outline: 1px solid var(--primary-btn-hover-bg);
+
+}
+.miniCart ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 350px;
+    overflow-y: auto;
+    padding-bottom: 5px;
+}
+
+.miniCart ul li{
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+
+}
+.miniCart ul li:last-child{
+    margin-bottom: 0px;
+}
+.miniCart ul li > .left{
+    width: calc(50% - 10px);
+    margin-right: 20px;
+}
+.miniCart ul li > .left h4{
+    font-weight: 300;
+    font-size: 1rem;
+    line-height: 1;
+    margin: 0;
+    margin-bottom: 10px;
+}
+.miniCart ul li > .left span{
+    font-weight: 500;
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+.miniCart ul li > .left h5{
+    font-weight: 400;
+    font-size: 0.875rem;
+    margin: 10px 0;
+}
+
+.miniCart ul li > .right{
+    width: calc(50% - 10px);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+}
+.miniCart ul li > .right .qtyWrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    margin-right: 10px;
+}
+
+.miniCart ul li > .right .qtyWrapper .plus,
+.miniCart ul li > .right .qtyWrapper .minus{
+    border: 1px solid var(--font-color);
+    line-height: 1;
+    padding: 5px 8px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+.miniCart ul li > .right .qtyWrapper .plus:hover,
+.miniCart ul li > .right .qtyWrapper .minus:hover{
+    background-color: var(--font-color);
+    color: #fff ;
+}
+.miniCart ul li > .right .qtyWrapper .count{
+    font-weight: 600;
+    font-size: 1rem;
+}
+.miniCart ul li > .right > img{
+    max-width: 125px;
+    width: 100%;
+    height: auto;
+    cursor: default;
+}
+.miniCart ul li .left .attributesWrap{
+    margin: 5px 0 10px 0;
+}
+.miniCart ul li .left .attributesWrap h5{
+    font-weight: 400;
+    font-size: 0.875rem;
+    margin-bottom: 0;
+}
+
+.miniCart ul li .left .attributesWrap > .itemsWrap{
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+.miniCart ul li .left .attributesWrap > .itemsWrap > #textAttribute{
+    padding: 4px;
+    border: 1px solid var(--font-color);
+    font-weight: 400;
+    font-size: 0.875rem;
+    line-height: 0.875rem;
+    margin: 0;
+    margin-right: 10px;
+    margin-top: 5px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+.miniCart ul li .left .attributesWrap > .itemsWrap > #textAttribute:hover{
+    background-color: var(--font-color);
+    color: #fff;
+}
+.miniCart ul li .left .attributesWrap > .itemsWrap > #textAttribute.selected{
+    background-color: var(--font-color);
+    color: #fff;
+}
+.miniCart ul li .left .attributesWrap > .itemsWrap > #swatchAttribute{
+    margin: 5px 5px 3px 2px;
+    cursor: pointer;
+    height: 20px;
+    width: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.miniCart ul li .left .attributesWrap > .itemsWrap > #swatchAttribute > div{
+    width: 18px !important;
+    height: 18px !important;
+    pointer-events: none !important;
+    user-select: none !important;
+}
+.miniCart ul li .left .attributesWrap > .itemsWrap > #swatchAttribute:hover{
+    outline: var(--primary-btn-bg) 1px solid;
+}
+.miniCart ul li .left .attributesWrap > .itemsWrap > #swatchAttribute.selected{
+    outline: var(--primary-btn-bg) 1px solid;
+}
+
+
+@keyframes fadeInDown {
+    0% {
+       opacity: 0;
+       transform: translateY(-20px);
+    }
+    100% {
+       opacity: 1;
+       transform: translateY(0);
+    }
+  }

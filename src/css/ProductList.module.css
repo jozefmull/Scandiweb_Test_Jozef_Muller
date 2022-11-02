@@ -1,0 +1,184 @@
+.productWrapper{
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.productWrapper > .productItem{
+    width: 100%;
+    max-width: 325px;
+    min-width: 275px;
+    margin: 20px 15px;
+    padding: 15px 20px;
+    transition: var(--transition);
+    height: 100%;
+    max-height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    -webkit-animation-duration: var(--anim-duration);
+    animation-duration: var(--anim-duration);
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-name: fadeInDown;
+    animation-name: fadeInDown;
+}
+
+.productWrapper > .productItem > a{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+.productWrapper > .productItem > a:focus{
+    outline: none;
+}
+.productWrapper > .productItem:hover{
+    box-shadow: 0px 4px 35px rgba(168, 172, 176, 0.19);
+}
+.productWrapper > .productItem > .imgWrapper{
+    position: relative;
+    width: 100%;
+    height: 325px;
+    text-align: center;
+    overflow: hidden;
+    pointer-events: none;
+    user-select: none;
+    background-color: #f9f9f9;
+    padding: 10px;
+   
+}
+.productWrapper > .productItem > .imgWrapper img{
+    width: 100%;
+    transition: var(--transition);
+    mix-blend-mode: darken;
+}
+.productWrapper > .productItem >  .imgWrapper > .outOfStock{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #ffffff;
+    opacity: 0.5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    user-select: none;
+}
+.productWrapper > .productItem >  .imgWrapper > .outOfStock h3{
+    color: #8D8F9A;
+    mix-blend-mode:darken;
+    font-weight: 400;
+    font-size: 1.5rem;
+    pointer-events: none;
+    user-select: none;
+}
+.productWrapper > .productItem >  .imgWrapper > .outOfStock + img{
+    mix-blend-mode: unset !important;
+}
+.productWrapper > .productItem .productInfo{
+    width: 100%;
+    position: relative;
+}
+.productWrapper > .productItem .productInfo div{
+    width: 52px;
+    height: 52px;
+    background-color: var(--primary-btn-bg);
+    border-radius: 50%;
+    position: absolute;
+    right: 0px;
+    top: -20px;
+    opacity: 0;
+    transition: var(--transition);
+    cursor: pointer;
+}
+.productWrapper > .productItem .productInfo div.disabled{
+    background-color: #ccc !important;
+    cursor: not-allowed !important;
+    pointer-events: none !important;
+}
+.productWrapper > .productItem .productInfo div:hover{
+    background-color: var(--primary-btn-hover-bg);
+}
+.productWrapper > .productItem .productInfo div img{
+    padding: 15px;
+    position: relative;
+    right: 2px;
+    user-select: none;
+    pointer-events: none;
+}
+.productWrapper > .productItem:hover .productInfo div{
+    opacity: 1;
+    top: -30px;
+}
+.productWrapper > .productItem .productInfo h3{
+    font-weight: 300;
+    font-size: 1.125rem;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.productWrapper > .productItem .productInfo span{
+    font-weight: 500;
+    font-size: 1.125rem;
+}
+@media only screen and (max-width: 1280px) {
+    .productWrapper > .productItem{
+        width: calc(30% - 40px);
+    }
+}
+@media only screen and (max-width: 1095px) {
+    .productWrapper > .productItem{
+        width: calc(30% - 50px);
+        min-width: 225px;
+    }
+}
+@media only screen and (max-width: 956px) {
+    .productWrapper{
+        justify-content: space-between;
+    }
+    .productWrapper > .productItem{
+        width: calc(50% - 30px);
+        min-width: 250px;
+    }
+}
+@media only screen and (max-width: 850px) {
+    .productWrapper > .productItem{
+        width: calc(40% - 30px);
+    }
+}
+@media only screen and (max-width: 695px) {
+    .productWrapper > .productItem{
+        min-height: unset;
+        min-width: 200px;
+        max-height: 550px;
+    }
+    .productWrapper > .productItem > .imgWrapper{
+        height: 250px;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .productWrapper > .productItem{
+        width: 100%;
+        max-width: unset !important;
+    }
+    .productWrapper > .productItem > .imgWrapper{
+        height: 250px;
+    }
+}
+
+@keyframes fadeInDown {
+    0% {
+       opacity: 0;
+       transform: translateY(-20px);
+    }
+    100% {
+       opacity: 1;
+       transform: translateY(0);
+    }
+  }

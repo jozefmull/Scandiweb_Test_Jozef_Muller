@@ -1,0 +1,58 @@
+.navCurrConv{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+    cursor: pointer;
+    position: relative;
+    user-select: none;
+}
+.navCurrConv span{
+    margin-right: 5px;
+    font-weight: 500;
+    font-size: 1.125rem;
+    width: 25px;
+    text-align: center;
+}
+.currUl{
+    position: absolute;
+    top: 32px;
+    list-style: none;
+    padding: 0;
+    width: 100px;
+    box-shadow: 0px 4px 35px rgba(168, 172, 176, 0.19);
+    padding: 10px 0;
+    z-index: 50;
+    background-color: #fff;
+    -webkit-animation-duration: var(--anim-duration);
+    animation-duration: var(--anim-duration);
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-name: fadeInDown;
+    animation-name: fadeInDown;
+}
+.currUl li{
+    padding: 10px 15px;
+    transition: var(--transition);
+    font-weight: 500;
+    font-size: 1.125rem;
+}
+.currUl li:hover{
+    background-color: #EEEEEE;
+}
+
+.opened{
+    transform: rotate(180deg) !important;
+}
+
+@keyframes fadeInDown {
+    0% {
+       opacity: 0;
+       transform: translateY(-20px);
+    }
+    100% {
+       opacity: 1;
+       transform: translateY(0);
+    }
+  }

@@ -1,0 +1,64 @@
+.loadWrap{
+  text-align: center;
+  padding: 15px 10px;
+}
+.loadWrap .ellipsis {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 13px;
+  }
+.loadWrap .ellipsis div {
+    position: absolute;
+    top: 0px;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: var(--primary-btn-bg);
+    animation-timing-function: linear;
+  }
+.loadWrap .ellipsis div:nth-child(1) {
+    left: 8px;
+    animation: ellipsis1 0.6s infinite;
+  }
+  @keyframes ellipsis1 {
+    0% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  .loadWrap .ellipsis div:nth-child(4) {
+    left: 56px;
+    animation: ellipsis4 0.6s infinite;
+  }
+  
+  @keyframes ellipsis4 {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(0);
+    }
+  }
+.loadWrap  .ellipsis div:nth-child(2) {
+    left: 8px;
+    animation: ellipsis2 0.6s infinite;
+  }
+  
+  .loadWrap  .ellipsis div:nth-child(3) {
+    left: 32px;
+    animation: ellipsis2 0.6s infinite;
+  }
+  @keyframes ellipsis2 {
+    0% {
+      transform: translate(0,0);
+    }
+    100% {
+      transform: translate(24px, 0);
+    }
+  }
+
+
+

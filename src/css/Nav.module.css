@@ -1,0 +1,215 @@
+.navigation{
+    height: fit-content;
+    width: 100%;
+    background-color: #fff;
+    position: sticky;
+	top: 0;
+    z-index: 75;
+    background-color: #fff;
+}
+.navigation > .navWrapper{
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 25px;
+    height: 80px;
+}
+.navigation > .navWrapper > .linkWrapper{
+    min-width: 265px;
+}
+.navigation > .navWrapper > .linkWrapper > a{
+    padding: 31px 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: var(--transition);
+    font-weight: 600;
+    text-align: left;
+    display: inline-block;
+    position: relative;
+    margin: 0;
+    cursor: pointer;
+    color: #1D1F22;
+    -webkit-animation-duration: var(--anim-duration);
+    animation-duration: var(--anim-duration);
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-name: fadeInDown;
+    animation-name: fadeInDown;
+    font-size: 1rem;
+}
+.navigation > .navWrapper > .linkWrapper > a:hover,
+.navigation > .navWrapper > .linkWrapper > a:focus{
+    color: var(--primary-btn-bg) !important;
+}
+.navigation > .navWrapper > .linkWrapper > a:focus{
+    outline: none;
+}
+.navigation > .navWrapper > .linkWrapper > a:before{
+    display: block;
+    content: '';
+    border-bottom: solid 2px var(--primary-btn-bg);
+    transform: scaleX(0);
+    transition: var(--transition);
+    transform-origin: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+.navigation > .navWrapper > .linkWrapper > a:hover:before,
+.navigation > .navWrapper > .linkWrapper > a:focus:before{
+    transform: scaleX(1);
+}
+.navigation > .navWrapper > .linkWrapper > a.activeNavLink{
+    color: var(--primary-btn-bg) !important;
+}
+.navigation > .navWrapper > .linkWrapper > a.activeNavLink:before{
+    transform: scaleX(1);
+}
+.navigation > .navWrapper > .logo{
+    -webkit-animation-duration: var(--anim-duration);
+    animation-duration: var(--anim-duration);
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-name: fadeInDown;
+    animation-name: fadeInDown;
+}
+.navigation > .navWrapper > .logo:focus{
+    outline: none
+}
+.navigation > .navWrapper > .right{
+    display: flex;
+    flex-direction: row;
+    width: 265px;
+    align-items: center;
+    justify-content: flex-end;
+}
+.navigation > .navWrapper > .right > *{
+    -webkit-animation-duration: var(--anim-duration);
+    animation-duration: var(--anim-duration);
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-name: fadeInDown;
+    animation-name: fadeInDown;
+}
+
+.overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 40;
+    cursor: pointer;
+}
+.burger{
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    z-index: 1000;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.875rem;
+    background-color: var(--primary-btn-bg);
+    color: #fff;
+    box-shadow: 0px 4px 35px rgba(168, 172, 176, 0.19);
+    cursor: pointer;
+    transition: var(--transition);
+    display: none;
+}
+.burger:hover{
+    background-color: var(--primary-btn-hover-bg);
+}
+.mobileNavigation{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    background-color: #fff;
+    z-index: 75 ;
+    padding: 15px 0;
+    top: 0;
+    bottom: 0;
+}
+
+.mobileNavigation > a{
+    padding: 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: var(--transition);
+    font-weight: 600;
+    text-align: left;
+    display: inline-block;
+    position: relative;
+    margin: 0;
+    cursor: pointer;
+    color: #1D1F22;
+    -webkit-animation-duration: var(--anim-duration);
+    animation-duration: var(--anim-duration);
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-name: fadeInDown;
+    animation-name: fadeInDown;
+    font-size: 1rem;
+}
+.mobileNavigation > a:hover,
+.mobileNavigation > a:focus{
+    color: var(--primary-btn-bg) !important;
+}
+.mobileNavigation > a:focus{
+    outline: none;
+}
+.mobileNavigation > a:before{
+    display: block;
+    content: '';
+    border-bottom: solid 2px var(--primary-btn-bg);
+    transform: scaleX(0);
+    transition: var(--transition);
+    transform-origin: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+.mobileNavigation > a:hover:before,
+.mobileNavigation > a:focus:before{
+    transform: scaleX(1);
+}
+.mobileNavigation > a.activeNavLink{
+    color: var(--primary-btn-bg) !important;
+}
+.mobileNavigation > a.activeNavLink:before{
+    transform: scaleX(1);
+}
+
+@keyframes fadeInDown {
+    0% {
+       opacity: 0;
+       transform: translateY(-20px);
+    }
+    100% {
+       opacity: 1;
+       transform: translateY(0);
+    }
+}
+
+
+@media only screen and (max-width: 768px) {
+    .burger{
+        display: flex;
+    }
+    .navigation .navWrapper .linkWrapper{
+        display: none;
+    }
+}

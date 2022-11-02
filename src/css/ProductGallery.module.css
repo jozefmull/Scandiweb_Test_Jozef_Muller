@@ -1,0 +1,96 @@
+.productGalleryWrap{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    height: 100%;
+    max-height: 525px;
+}
+.productGalleryWrap ul{
+    padding: 0;
+    list-style: none;
+    margin: 0;
+    height: 100%;
+    width: 85px;
+    max-height: 525px;
+    margin-right: 25px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding-right: 15px;
+}
+.productGalleryWrap ul li{
+    filter:grayscale(0.75);
+    transition: var(--transition);
+    cursor: pointer;
+    user-select: none;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f9f9f9;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+.productGalleryWrap ul li:hover{
+    filter: none;
+}
+.productGalleryWrap ul li.current{
+    filter: none;
+}
+.productGalleryWrap ul li img{
+    max-width: 100%;
+    transition: var(--transition);
+    mix-blend-mode: darken;
+}
+.productGalleryWrap .currentImgWrap{
+    width: 100%;
+    height: 100%;
+    max-width: 550px;
+    max-height: 525px;
+    overflow: hidden;
+    cursor: zoom-in;
+}
+
+@media only screen and (max-width: 850px) {
+    .productGalleryWrap,
+    .productGalleryWrap .currentImgWrap,
+    .productGalleryWrap ul{
+        max-height: 450px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .productGalleryWrap ul{
+        width: 75px;
+        padding-right: 10px;
+        margin-right: 10px;
+    }
+    .productGalleryWrap ul li{
+        height: 75px;
+    }
+}
+@media only screen and (max-width: 425px) {
+    .productGalleryWrap{
+        flex-direction: column;
+        max-height: unset;
+    }
+    .productGalleryWrap ul{
+        width: 100%;
+        padding: 0;
+        max-width: 100%;
+        height: 100%;
+        max-height: 100%;
+        margin-right: 0;
+        margin-bottom: 15px;
+        display: flex;
+        flex-wrap: wrap;
+        overflow-y: hidden;
+        overflow-x: auto;
+    }
+    .productGalleryWrap ul li{
+        width: 75px !important;
+        margin: 3px;
+        display: inline-block;
+    }
+}
