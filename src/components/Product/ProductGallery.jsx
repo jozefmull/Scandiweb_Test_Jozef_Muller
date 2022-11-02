@@ -19,7 +19,7 @@ export default class ProductGallery extends Component {
 
 
   render() {
-    const {images, lightbox, handleLightbox} = this.props
+    const {images, lightbox, handleLightbox, inStock} = this.props
 
     let filteredImages = images.filter(id => id !== this.state.currIndex)
 
@@ -37,6 +37,11 @@ export default class ProductGallery extends Component {
               ))}
           </ul>
           <div className={styles.currentImgWrap}>
+              {!inStock ? (
+                <div className={styles.outOfStock}>
+                  <h3>OUT OF STOCK</h3>
+                </div>
+              ) : null}
               <img 
                 src={images[this.state.currIndex]} 
                 alt="active-gallery-pic" 

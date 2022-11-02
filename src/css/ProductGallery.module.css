@@ -52,6 +52,29 @@
     cursor: zoom-in;
 }
 
+.productGalleryWrap .currentImgWrap .outOfStock{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #ffffff;
+    opacity: 0.5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    user-select: none;
+}
+.productGalleryWrap .currentImgWrap .outOfStock h3{
+    color: #8D8F9A;
+    mix-blend-mode:darken;
+    font-weight: 400;
+    font-size: 1.5rem;
+    pointer-events: none;
+    user-select: none;
+}
+
 @media only screen and (max-width: 850px) {
     .productGalleryWrap,
     .productGalleryWrap .currentImgWrap,

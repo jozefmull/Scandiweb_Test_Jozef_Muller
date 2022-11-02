@@ -39,7 +39,6 @@ export default class ProductCard extends Component {
     const {name, gallery, prices, id, inStock} = product
     // get card price in selected currency
     const cardPrice = getProductPrice(prices, selectedCurrency)
-
     
     return (
         <li className={styles.productItem} style={{animationDelay: idx + '50ms'}}>

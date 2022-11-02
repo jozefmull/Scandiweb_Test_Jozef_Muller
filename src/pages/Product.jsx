@@ -103,7 +103,7 @@ class Product extends Component {
           <div className={styles.columnsWrapper}>
             {/* LEFT COLUMN */}
             <div className={styles.leftCol}>
-              <ProductGallery images={productDetails?.product?.gallery} handleLightbox={handleLightbox} lightbox={lightbox}/>
+              <ProductGallery images={productDetails?.product?.gallery} handleLightbox={handleLightbox} lightbox={lightbox} inStock={productDetails?.product?.inStock}/>
             </div>
             {/* RIGHT COLUMN */}
             <div className={styles.rightCol}>
