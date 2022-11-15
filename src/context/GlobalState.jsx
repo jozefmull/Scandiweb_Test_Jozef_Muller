@@ -135,31 +135,6 @@ export const GlobalProvider = ({ children }) => {
             dispatch({type: 'REMOVE_CART_ITEM', payload: index})
         }
     }
-
-    const changeProductAttributesInCart = (e, selectedAttributes, cartItem) => {
-        // find index of this item in cartItems
-        let idx = state.cartItems.indexOf(cartItem)
-        // get values from data on element
-        let myAttribute =  e.target.getAttribute("data-attribute")
-        let myValue =  e.target.getAttribute("data-value")
-        // if this attribute is present in item selectedattributes
-        if (selectedAttributes.some(attributes => myAttribute in attributes)){
-            //1. find index of this attribute
-            let index = selectedAttributes.findIndex(obj => obj.hasOwnProperty(myAttribute))
-            //2. make shallow copy of selected attributes
-            let items = [...selectedAttributes]
-            //3. make shallow copy of this attribute in selected attributes
-            let item = {...items[index]}
-            //4. assign new value to this attribute
-            item[myAttribute] = myValue
-            //5. insert new attribute with new value into its place
-            items[index] = item
-            //6.copy cart item but with new selected attributes
-            const tmp = {...cartItem, selectedAttributes: [...items]}
-            //7. dispatch action
-            dispatch({type: 'UPDATE_PRODUCT_ATTRIBUTES_IN_CART', payload: {idx, tmp}})
-        }
-    }
     // HANDLE OPEN LIGHTBOX
     const handleLightbox = (open, items, index) => {
         dispatch({type: 'HANDLE_LIGHTBOX', payload: {open, items, index}})
@@ -187,7 +162,6 @@ export const GlobalProvider = ({ children }) => {
         decrementCartItemQty,
         setLoading,
         setError,
-        changeProductAttributesInCart,
         handleLightbox
     }}>
         {children}

@@ -6,7 +6,7 @@ import CartSwatchAttribute from './CartSwatchAttribute'
 export default class AttValues extends Component {
 
   render() {
-    const {items, type, attribute, selectedAttributes, styles, handleAttributes, cartItem} = this.props
+    const {items, type, attribute, selectedAttributes, styles} = this.props
 
     if (type === 'text') {
       return (
@@ -17,8 +17,6 @@ export default class AttValues extends Component {
                   item={item} id={id} 
                   attribute={attribute} 
                   styles={styles}
-                  cartItem={cartItem}
-                  handleAttributes={handleAttributes}
                   selectedAttributes={selectedAttributes}
                   />
           ))}
@@ -35,8 +33,6 @@ export default class AttValues extends Component {
                     item={item} 
                     attribute={attribute} 
                     styles={styles}
-                    cartItem={cartItem}
-                    handleAttributes={handleAttributes}
                     selectedAttributes={selectedAttributes}
                     />
             ))}

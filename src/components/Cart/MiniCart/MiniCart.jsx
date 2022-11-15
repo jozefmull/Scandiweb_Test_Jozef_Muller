@@ -31,7 +31,7 @@ export default class MiniCart extends Component {
         ) : null}
         {miniCartOpen ? (
             <div className={styles.miniCart}>
-              <h3>My bag, <span>{cartCount} items</span></h3>
+              <h3>My bag, <span>{cartCount} {cartCount === 1 ? 'item' : 'items'}</span></h3>
               {!cartItems.length > 0 ? 'Please add some products to your bag' : (
                 <>
                   <div className={styles.itemsWrap}>

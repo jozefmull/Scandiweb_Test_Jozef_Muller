@@ -103,7 +103,10 @@
     padding: 0;
     list-style: none;
 }
-
+.productDetails .columnsWrapper .rightCol > .description ul{
+    padding-left: 20px;
+    list-style: unset !important;
+}
 .productDetails .columnsWrapper .rightCol > div ul li{
     margin: 10px 0px;
 }

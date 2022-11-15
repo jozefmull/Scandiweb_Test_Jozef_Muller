@@ -18,7 +18,7 @@ class Category extends Component {
   // on component mount
   componentDidMount(){
     // destructure context
-    const {selectedCategory, changeCategory, setLoading, setError, setCategoryData} = this.context
+    const {changeCategory, setLoading, setError, setCategoryData} = this.context
     // set loading to true
     setLoading(true)
     //get category from url params (possible bcs of with router hook)
@@ -27,8 +27,8 @@ class Category extends Component {
     if (category) {
       changeCategory(category.toUpperCase())
     }
-    // make query with variable from url params (returns promise)
-    const res = makeQuery(GET_CATEGORY_DATA, {input : {title: selectedCategory?.toLowerCase()}})
+    // make query with variable from url params or if we dont have value from url we pass all (returns promise)
+    const res = makeQuery(GET_CATEGORY_DATA, {input: {title: category ? category?.toLowerCase() : 'all'}})
     // wait for reposne and do stuff with data
     res.then(res => {
       const {data} = res
@@ -36,7 +36,7 @@ class Category extends Component {
       //set loading to false
       setLoading(false)
       //1. setCategory data to global state
-      setCategoryData({name: category?.name, products: category?.products})
+       setCategoryData({name: category?.name, products: category?.products})
     //catch and set error if there is any
     }).catch(error => setError(error.message))
   }
@@ -47,14 +47,14 @@ class Category extends Component {
     const {category:prevCategory} = prevProps.params
     const {category} = this.props.params
     // desctructure context
-    const {changeCategory, setLoading, setError, setCategoryData, selectedCategory} = this.context
+    const {changeCategory, setLoading, setError, setCategoryData} = this.context
 
     // if category has changed
     if (prevCategory !== category) {
       // change context category to category from url and when we do not have category change to ALL 
       changeCategory( category ? category.toUpperCase() : 'ALL')
       // make query with variable from url params (returns promise)
-      const res = makeQuery(GET_CATEGORY_DATA, {input : {title: selectedCategory?.toLowerCase()}})
+      const res = makeQuery(GET_CATEGORY_DATA, {input : {title: category ? category?.toLowerCase() : 'all'}})
       // wait for reposne and do stuff with data
       res.then(res => {
         const {data} = res

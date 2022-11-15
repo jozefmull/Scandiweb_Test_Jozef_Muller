@@ -87,15 +87,6 @@ export const AppReducer = (state, action) => {
             ...state.cartItems.filter((item,id) => id !== action.payload),
           ]
         }
-      case 'UPDATE_PRODUCT_ATTRIBUTES_IN_CART':
-        // insert new item with updated selectedAttributes to place of an old item with selectedAttributes
-        state.cartItems.splice(action.payload.idx, 1, action.payload.tmp)
-        // set localstorage
-        localStorage.setItem('scandiweb_test_cart_items', JSON.stringify(state.cartItems))
-        //return state
-        return{
-          ...state,
-        }
       case 'HANDLE_LIGHTBOX':
         //return state
         return{

@@ -1,5 +1,6 @@
 import { Component } from 'react'
 import { GlobalContext } from '../context/GlobalState'
+import DOMPurify from "dompurify";
 
 import { GET_PRODUCT_DATA, makeQuery } from '../context/GraphQLQueries';
 
@@ -73,6 +74,7 @@ class Product extends Component {
     // get variables from context and state
     const {loading, productDetails, selectedCurrency, addItemToCart, error, handleLightbox, lightbox} = this.context
     const {selectedAttributes} = this.state
+
     // get product price in selected currency
     let productPrice = getProductPrice(productDetails?.product?.prices, selectedCurrency)
 
@@ -135,8 +137,9 @@ class Product extends Component {
                   disabled={productDetails?.product?.inStock ? false : true}
                   onClick={() => addItemToCart(productDetails?.product, selectedAttributes)}>
                     ADD TO CART
-                  </button>
-                <div dangerouslySetInnerHTML={{__html: productDetails?.product?.description}}></div>
+                </button>
+                {/* sanitized markup that we got in product data */}
+                <div className={styles.description} dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(productDetails?.product?.description) }}/>
             </div>
           </div>
         ) : null }

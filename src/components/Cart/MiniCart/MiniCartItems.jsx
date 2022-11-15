@@ -13,7 +13,7 @@ export default class MiniCartItems extends Component {
     }
 
   render() {
-    const {decrementCartItemQty, incrementCartItemQty, changeProductAttributesInCart} = this.context
+    const {decrementCartItemQty, incrementCartItemQty} = this.context
     const {cartItem, selectedCurrency} = this.props
     const {prices, name, gallery, qty, attributes, selectedAttributes, brand} = cartItem
 
@@ -34,8 +34,7 @@ export default class MiniCartItems extends Component {
                       items={att.items}
                       type={att.type}
                       styles={styles}
-                      cartItem={cartItem}
-                      handleAttributes={changeProductAttributesInCart}
+                      // handleAttributes={changeProductAttributesInCart}
                       />
                   </div>
                 ))}

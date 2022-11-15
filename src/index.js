@@ -9,10 +9,18 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import {ApolloClient, ApolloProvider, InMemoryCache} from '@apollo/client'
 import { GlobalProvider } from './context/GlobalState';
 
+const defaultOptions = {
+  query: {
+    fetchPolicy: 'no-cache',
+    errorPolicy: 'all',
+  },
+}
+
 //APOLLO CLIENT
 export const client = new ApolloClient({
   uri: 'http://localhost:4000/',
-  cache: new InMemoryCache()
+  cache: new InMemoryCache(),
+  defaultOptions: defaultOptions
 })
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

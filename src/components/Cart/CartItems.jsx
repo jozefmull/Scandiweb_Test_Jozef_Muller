@@ -9,12 +9,12 @@ import AttributeCartValues from '../Cart/AttributesCart/AttributeCartValues'
 import styles from '../../css/Cart.module.css'
 import ImageSlider from './ImageSlider'
 
-export default class MiniCartItems extends Component {
+export default class CartItems extends Component {
     static contextType = GlobalContext
 
   render() {
     // get values from props and context
-    const {decrementCartItemQty, incrementCartItemQty, changeProductAttributesInCart} = this.context
+    const {decrementCartItemQty, incrementCartItemQty} = this.context
     const {cartItem, selectedCurrency} = this.props
     // desctructre item
     const {prices, name, gallery, qty, brand, attributes, selectedAttributes, id} = cartItem
@@ -36,8 +36,6 @@ export default class MiniCartItems extends Component {
                         items={att.items}
                         type={att.type}
                         styles={styles}
-                        cartItem={cartItem}
-                        handleAttributes={changeProductAttributesInCart}
                       />
                   </div>
                 ))}

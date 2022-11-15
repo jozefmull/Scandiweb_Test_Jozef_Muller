@@ -17,7 +17,7 @@ export default class SwatchAttribute extends Component {
         
       >
         <div 
-          style={item.id === 'White'? {outline: '1px solid #000', outlineStyle: 'inset', backgroundColor: item.value} : {backgroundColor: item.value}}
+          style={item.id === 'White'? {outline: '1px solid #ccc', backgroundColor: item.value} : {backgroundColor: item.value}}
         ></div>
       </li>
     )

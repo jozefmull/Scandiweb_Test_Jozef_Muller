@@ -36,7 +36,7 @@ export default class ProductCard extends Component {
     const {product, selectedCurrency, idx} = this.props
     const {selectedAttributes} = this.state
     // desctructure product values
-    const {name, gallery, prices, id, inStock} = product
+    const {name, gallery, prices, id, inStock, brand} = product
     // get card price in selected currency
     const cardPrice = getProductPrice(prices, selectedCurrency)
     
@@ -60,7 +60,7 @@ export default class ProductCard extends Component {
                       {/* addItemToCart(productDetails?.product, selectedAttributes) */}
                       <img src={CartIcon} alt='cart-icon'/>
                   </div>
-                  <h3>{name}</h3>
+                  <h3>{name} {brand}</h3>
                   <span>{cardPrice.currency.symbol} {cardPrice.amount}</span>
               </div>  
         </li>

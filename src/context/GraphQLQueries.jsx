@@ -84,6 +84,5 @@ export const makeQuery = async(query, myVars) => {
         query: query,
         variables: myVars,
     })
-    
     return response 
 }

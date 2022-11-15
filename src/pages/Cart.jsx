@@ -19,7 +19,6 @@ export default class Cart extends Component {
     const {cartItems, selectedCurrency, loading, error} = this.context
     // get cart total with helper function
     const {quantities, total, tax} = getCartTotal(cartItems, selectedCurrency)
-    
     // if we are loading display loader
     if (loading) {
       return (
